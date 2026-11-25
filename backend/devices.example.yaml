@@ -1,0 +1,34 @@
+# Optional bulk import. Devices are managed from the Devices page in the UI (or the API) and
+# stored in the database. This file is imported once, when the database has no devices yet:
+# copy it to devices.yaml (ignored by git) before the first start. Each device gets one
+# connection method; add more methods (fallbacks) from the UI.
+#
+# Fields per device (values in `defaults` apply to every device unless the device sets them):
+#   host        IP address or DNS name. Required and unique.
+#   protocol    restconf (default) or ssh
+#   username    Required
+#   password    Required
+#   port        Default 443 for restconf, 22 for ssh
+#   platform    Netmiko device type: cisco_xe, cisco_ios, cisco_nxos, cisco_xr, arista_eos,
+#               juniper_junos. Optional: SSH detects it, RESTCONF supports cisco_xe only.
+#   verify_tls  RESTCONF only. false for lab devices with self-signed certificates.
+#   timeout     Seconds, default 10
+#   enabled     false to skip a device without deleting it
+
+defaults:
+  protocol: restconf
+  username: admin
+  password: change-me
+  verify_tls: false
+
+devices:
+  - host: 10.10.20.11
+  - host: 10.10.20.12
+  - host: 10.10.20.13
+
+  # Example of a device polled over SSH with Netmiko:
+  # - host: 10.10.20.21
+  #   protocol: ssh
+  #   platform: cisco_nxos
+  #   username: netops
+  #   password: other-password

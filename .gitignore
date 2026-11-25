@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.mypy_cache/
+dist/
+build/
+
+# Node
+node_modules/
+.vite/
+
+# Secrets and local data
+.env
+devices.yaml
+data/
+snapshots/
+*.sqlite
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local working notes, not part of the repository
+CLAUDE.md
+docs/
+commands.txt
+frontend_ideas/
