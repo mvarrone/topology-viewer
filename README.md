@@ -136,7 +136,10 @@ The Vite dev server on port 5173 forwards `/api` and `/ws` to the backend on por
 
 ## Tested scenarios
 
-All of these were run on a two router CML lab (R1 and R2 with two parallel links):
+All of these were run on a two router CML lab: two Catalyst 8000V routers (R1 and R2) with two parallel links, and management through an unmanaged switch and an external connector to the host network.
+
+![CML lab](screenshots/cml-lab.png)
+
 
 | Scenario | Result |
 |---|---|
@@ -171,4 +174,6 @@ docker-compose.yml
 
 ## License
 
-[MIT](LICENSE)
+Released under the [MIT License](LICENSE). You can use, change and share the code, keeping the copyright notice.
+
+Made by **Matias Varrone**. Questions and suggestions are welcome in [Issues](https://github.com/mvarrone/topology-viewer/issues).
